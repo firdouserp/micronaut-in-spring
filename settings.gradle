@@ -1,0 +1,12 @@
+pluginManagement {
+  repositories {
+    maven { url = 'https://maven.vaadin.com/vaadin-prereleases' }
+    gradlePluginPortal()
+  }
+  plugins {
+    id 'com.vaadin' version "24.4.6"
+  }
+}
+include ":RetrieveServiceCore"
+rootProject.name="default"
+

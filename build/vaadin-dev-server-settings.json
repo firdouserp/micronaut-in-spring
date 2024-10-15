@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/./src/main/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/./src/main/frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/build/resources/main/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\aziz.rehman\\Downloads\\spring-boot-micronaut-data-gradle-java\\build\\resources\\main\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\aziz.rehman\\Downloads\\spring-boot-micronaut-data-gradle-java\\build\\resources\\main\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/build/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/build/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/aziz.rehman/Downloads/spring-boot-micronaut-data-gradle-java/./src/main/frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "C:\\Users\\aziz.rehman\\Downloads\\spring-boot-micronaut-data-gradle-java\\build\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}

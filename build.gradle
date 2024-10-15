@@ -1,0 +1,73 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+plugins {
+    id("java") 
+    id("org.springframework.boot") version "3.2.7"
+    id("com.diffplug.spotless") version "6.23.3"
+    id("io.spring.dependency-management") version "1.1.0"
+    id 'com.vaadin'
+    id 'maven-publish'
+}
+apply plugin: 'maven-publish'
+version = "0.1"
+group = "example.micronaut"
+sourceCompatibility = 17
+targetCompatibility = 17
+repositories {
+    mavenCentral()
+    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
+    maven { url "https://plugins.gradle.org/m2/" }
+    flatDir {
+       dirs("libs")
+   }
+}
+vaadin {
+    pnpmEnable = false
+}
+dependencies {
+
+ 	implementation enforcedPlatform("com.vaadin:vaadin-bom:24.4.6")
+    annotationProcessor("io.micronaut:micronaut-inject-java")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor:4.8.1")
+    implementation("io.micronaut.data:micronaut-data-jdbc")
+    implementation platform("io.micronaut.platform:micronaut-platform:4.5.0")
+    implementation("io.micronaut.spring:micronaut-spring-boot-starter")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("jakarta.persistence:jakarta.persistence-api")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    annotationProcessor("jakarta.annotation:jakarta.annotation-api")
+implementation("jakarta.annotation:jakarta.annotation-api")
+annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+implementation("jakarta.persistence:jakarta.persistence-api")
+implementation("io.micronaut.spring:micronaut-spring-boot-starter")
+    //implementation("com.vaadin:vaadin-core")
+    // https://mvnrepository.com/artifact/com.vaadin/vaadin-spring-boot-starter
+	implementation group: 'com.vaadin', name: 'vaadin-spring-boot-starter', version: '24.4.6'
+	implementation fileTree(dir: 'libs', includes: ['*.jar'])
+    // https://mvnrepository.com/artifact/io.micronaut.spring/micronaut-spring-boot
+	//implementation 'io.micronaut.spring:micronaut-spring-boot:5.7.0'
+    implementation 'io.micronaut.spring:micronaut-spring:5.7.0'
+    
+    runtimeOnly("com.h2database:h2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jar{
+    archivesBaseName = 'micronaut-spring' 
+    version = '1.0'
+}
+spotless {
+    java {
+        licenseHeaderFile(file("LICENSEHEADER"))
+    }
+}
